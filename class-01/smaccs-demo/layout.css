@@ -1,0 +1,19 @@
+@media(max-width:700px){
+
+  
+  div{
+    margin: auto;
+    background: blue;
+  }
+  
+}
+@media(min-width:700px){ 
+  div {
+    float: left;
+  }
+
+  body {
+    margin: auto;
+    width: 900px;
+  }
+}
