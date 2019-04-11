@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Ginger",
+    "image_url": "ginger-princess.jpg",
+    "hobbies": "Fetching things and being a princess",
+    "body" : "<p>I have fetched things a bunch of times</p>"},
+  {
+    "name": "Khali",
+    "image_url": "https://scontent-sea1-1.xx.fbcdn.net/v/t1.15752-9/55788432_396165607781947_851642077212049408_n.jpg?_nc_cat=101&_nc_ht=scontent-sea1-1.xx&oh=27cd9fe90a53781e42cc031a3cc62b63&oe=5D3ABCE0",
+    "hobbies": "Chewing things",
+    "body" : "<h3>Hi I almost destroyed my dad's internet yesterday</h3>"
+  },
+    {
+    "name": "Odie",
+    "image_url": "https://vignette.wikia.nocookie.net/garfield/images/a/ac/OdieCharacter.jpg/revision/latest?cb=20161218045212",
+    "hobbies": "Annoying Garfield",
+    "body" : "<p>I have fetched things a bunch of times</p>"},
+  {
+    "name": "Lassie",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Lassie.jpg",
+    "hobbies": "Saving Timmy when he falls into the well",
+    "body" : "<p>I have fetched things a bunch of times</p>"},
+  {
+    "name": "Clifford",
+    "image_url": "https://vignette.wikia.nocookie.net/animated-video-games-muscular/images/8/85/Clifford.jpg/revision/latest?cb=20170219230418",
+    "hobbies": "Being big and red",
+    "body" : "<p>I have fetched things a bunch of times</p>"},
+  {
+    "name": "Hobbes",
+    "image_url": "https://vignette.wikia.nocookie.net/candh/images/3/36/61D_hobbes.jpg/revision/latest?cb=20121112232636",
+    "hobbies": "Being a solid sidekick to Calvin",
+    "body" : "<span>sup</span>"
+  }
+
+  
+]
