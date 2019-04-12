@@ -1,0 +1,17 @@
+nav {
+  float: left;
+  width: 250px;
+}
+
+aside {
+  float: right;
+  width: 250px;
+}
+
+main > * {
+  height: 100%;
+}
+
+.content section {
+  height: 50%;
+}
