@@ -1,0 +1,25 @@
+#dog-template {
+  display: none;
+}
+#dogs{
+  height: 1200px;
+}
+img {
+  height: 200px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.deck {
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap-reverse;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.card {
+  border: red 1px solid;
+}

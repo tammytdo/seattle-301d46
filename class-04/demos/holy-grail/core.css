@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body > * {
+  border: solid red 1px;
+}
+
+header, footer {
+  height: 100px;
+  background: #444;
+  color: #eee;
+}
+
+main {
+  background: #fafafa;
+  height: 600px;
+}
+
+
+
+.content {
+  background: #222;
+}
+
+aside {
+  background: #9c9000
+}
+
+nav {
+  background: #ff0000
+}
+
+.deck {
+  background: #0fa0ce;
+}
+
+.deck:first-child{
+  background: blue;
+}
+
+.centered-words{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

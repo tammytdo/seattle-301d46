@@ -1,0 +1,30 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+aside {
+  order: 3;
+  width: 250px;
+}
+
+nav {
+  width: 250px;
+}
+
+.content {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+}
+
+.content section{
+  flex-grow: 1;
+}
+
+
