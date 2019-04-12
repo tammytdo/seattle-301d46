@@ -1,0 +1,14 @@
+.deck {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+}
+
+img {
+  width: 125px;
+  height: 125px;
+}
