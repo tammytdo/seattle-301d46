@@ -1,6 +1,8 @@
 'use strict';
 
 // STEP 1
+// SUCCESSFUL
+
 // This is a standard function expression. You may also be familiar with function declarations, which begin with the "function" keyword.
 const theOldWay = function(course) {
   return `I am currently enrolled in ${course}`;
@@ -11,8 +13,11 @@ console.log('The old way:', theOldWay('Code 301'));
 
 
 // STEP 2
+// SUCCESSFUL
+
 // We can refactor our first function to use an arrow function.
 // The word "function" is removed and an arrow is added in between the parameter and the opening curly brace
+
 const theNewWay = (course) => {
   return `I am currently enrolled in ${course}`;
 };
@@ -22,6 +27,8 @@ console.log('The new way:', theNewWay('Code 301'));
 
 
 // STEP 3
+// SUCCESSFUL
+
 // When we have one parameter, we can omit the parentheses
 const withoutParens = course => {
   return `I am currently enrolled in ${course}`;
@@ -32,6 +39,8 @@ console.log('Without parens:', withoutParens('Code 301'));
 
 
 // STEP 4
+// SUCCESSFUL
+
 // If the code block contains a single line of code, we can write everything on one line
 // We no longer need the curly braces and the return is implicit
 // Without an arrow function, we need to explicitly type "return"
@@ -42,6 +51,8 @@ console.log('As a one-liner:', oneLiner('Code 301'));
 
 
 // STEP 5
+// SUCCESSFUL
+
 // What if we have multiple parameters?
 // In a function expression, they all go in the parentheses
 const add = function(num1, num2) {
@@ -53,6 +64,8 @@ console.log('Let\'s do some math:', add(4, 5));
 
 
 // STEP 6
+// SUCCESSFUL
+
 // When we have multiple parameters, they must be wrapped in parentheses
 // We can only remove the parentheses when there is a single parameter
 const addOneLiner = (num1, num2) => `${num1} + ${num2} = ${num1 + num2}`;
@@ -62,6 +75,8 @@ console.log('Add as a one-liner:', addOneLiner(4, 5));
 
 
 // STEP 7
+// SUCCESSFUL
+
 // What if we have multiple lines of code?
 // We need to use a code block
 const multiLiner = word => {
@@ -70,10 +85,12 @@ const multiLiner = word => {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log('Multi-line arrow function:', multiLiner('hello'));
+console.log('Multi-line arrow function:', multiLiner('hello'));
 
 
 // STEP 8
+// SUCCESSFUL
+
 // The way an object is returned is different with an arrow function, too.
 // Here is how we return an object without arrow functions
 const oldObject = function(array) {
@@ -89,6 +106,8 @@ console.log('Hello from the old object function', oldObject(['hi', 'hello', 'are
 
 
 // STEP 9
+// SUCCESSFUL
+
 // With an arrow function, we need to wrap our object in parentheses
 // Otherwise, it will be interpreted as a code block
 const newObject = array => ({
@@ -102,17 +121,18 @@ console.log('Hello from the new object function', newObject(['hi', 'hello', 'are
 
 
 // STEP 10
+// SUCCESSFUL
+
 // Uncomment the console.log lines to view the output of each function in the browser console.
 // Refactor each function into an arrow function.
 // Write your solutions on a single line wherever possible.
-
-
 
 const sum = (a, b, c, d) => {
   return a + b + c + d;
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
+// SUCCESSFUL
 console.log(sum(1, 2, 3, 4));
 
 
@@ -125,6 +145,7 @@ const objectLit = () => {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
+// SUCCESSFUL
 console.log(objectLit());
 
 
@@ -135,6 +156,7 @@ const sumAndProduct = (a, b) => {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
+// SUCCESSFUL
 console.log(sumAndProduct(3, 9));
 
 
@@ -143,6 +165,7 @@ const message = (name) => {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
+// SUCCESSFUL
 console.log(message('Allie'));
 
 
@@ -157,6 +180,8 @@ let joe = new Student('Joe', 'Schmoe', 100);
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this code to break!
 // console.log(joe);
+
+// SUCCESSFUL
 // Confirming I saw it break
 
 
@@ -167,6 +192,8 @@ Student.prototype.greeting = function() {
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
 // console.log(joe.greeting());
+
+// SUCCESSFUL
 // Confirming I saw it break
 
 
@@ -175,23 +202,31 @@ Student.courseName = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
+// SUCCESSFUL
+
 console.log(Student.courseName());
 
 
 
 // STEP 11
+// SUCCESSFUL
+
 // How do arrow functions affect constructor functions?
 Student.prototype.scope = function() {
   console.log(this);
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-console.log(joe.scope());
+// SUCCESSFUL
 
-Student.prototype.scopeArrow = () => console.log(this);
+console.log('Scope:', joe.scope());
+
+Student.prototype.scopeArrow = () => console.log('Studednt scope arrow:',this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-console.log(joe.scopeArrow());
+// SUCCESSFUL
+
+console.log('Joe scope arrow:', joe.scopeArrow());
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
@@ -199,4 +234,4 @@ console.log(joe.scopeArrow());
 // 2. What is "this" when joe.scopeArrow() is invoked?
 // It is the Window root object. 
 // 3. Explain why "this" is different when an arrow function is used.
-//
+// Different because arrow functions do not have access or cannot reference contextual "this".
