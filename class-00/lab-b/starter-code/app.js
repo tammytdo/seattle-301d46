@@ -231,7 +231,9 @@ console.log('Joe scope arrow:', joe.scopeArrow());
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
 // It is undefined.
+
 // 2. What is "this" when joe.scopeArrow() is invoked?
 // It is the Window root object. 
+
 // 3. Explain why "this" is different when an arrow function is used.
 // Different because arrow functions do not have access or cannot reference contextual "this".
