@@ -1,0 +1,26 @@
+/* base.css should contain any 
+- General styling on top of what is provided by a reset.css or normalize.css
+- Apply to elements such as body and main
+- Examples include styling of overall font and background color */
+
+@import url('https://fonts.googleapis.com/css?family=Abel|Oswald:700|Yellowtail|Patrick+Hand');
+
+* {
+  font-family: times;
+}
+
+body {
+  background: #fff;
+}
+
+main p {
+    color: #333;
+    font-size: 1.2em;
+    line-height: 1.3em;
+    text-indent: 30px;
+    margin: 20px 0px;
+}
+
+input {
+  font-family: 'Patrick Hand', cursive;
+}
