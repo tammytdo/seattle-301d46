@@ -27,6 +27,15 @@ app.use('*', (request, response) => {
   response.send('Our server runs.');
 })
 
+// Text
+const SQL = {};
+SQL.getLocation = 'SELECT * FROM locations WHERE search_query=$1'
+SQL.insertLocation = 'INSERT INTO locations (search_query, formatted_query, latitude, longitude) VALUES ($1, $2, $3, $4)'
+
+const API = {};
+API.geoCode = 'https://maps.googleapis.com/maps/api/geocode/json?address=';
+API.darksky = 'https://api.darksky.net/forecast/';
+
 
 // ==============================================
 // Helper Functions
@@ -45,48 +54,31 @@ function DailyWeather(rawDayObj){
 }
 
 function searchLatLng(request, response){
-  // Take the data from the front end ('Seattle')
   const searchQuery = request.query.data;
-  //check if it has been looked for before
-  console.log('checking the DATABASE');
-  client.query('SELECT * FROM locations WHERE search_query=$1', [searchQuery])
+  client.query(SQL.getLocation, [searchQuery])
     .then(result => {
-      console.log('result from DATABASE');
-      if (result.rows.length) { // (stuff in the db)
+      if (result.rows.length) {
         console.log('Exists in the DATABASE');
         response.send(result.rows[0])
-      } else { // I've never searched that before
+      } else {
         getStuffFromGoogle(searchQuery, response)
-
       }
     })
-
-  // ask superagent to go get data from google, if I don't have the data muself
-
 }
 
 function getStuffFromGoogle(searchQuery, response){
-  // Compose the url using our secret api key and the search term
-  const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${searchQuery}&key=${process.env.GEOCODE_API_KEY}`;
-  // go get the data from google
+  const url = `${API.geoCode}${searchQuery}&key=${process.env.GEOCODE_API_KEY}`;
   superagent.get(url).then(result => {
-    // take the front end query and the results from google and normalize the data
     const location = new Location(searchQuery, result.body.results[0]);
-    console.log('From Google API: \n', location);
-    // send the location to the front end
     response.send(location);
-
-    console.log('Not in the database, inserting into DATABASE');
-    client.query(`INSERT INTO locations (search_query, formatted_query, latitude, longitude) VALUES ($1, $2, $3, $4)`, [location.search_query, location.formatted_query, location.latitude, location.longitude]);
+    console.log('got location from Google API, inserting into DATABASE');
+    client.query(SQL.insertLocation, [location.search_query, location.formatted_query, location.latitude, location.longitude]);
   })
 }
 
-
 function getWeather (request, response) {
   console.log('from the front end: \n', request.query.data);
-  // use the data from the front end to ask darksky for weather data
-  superagent.get(`https://api.darksky.net/forecast/${process.env.WEATHER_API_KEY}/${request.query.data.latitude},${request.query.data.longitude}`).then(result => {
-  // map over the results and make new weather objects
+  superagent.get(`${API.darksky}${process.env.WEATHER_API_KEY}/${request.query.data.latitude},${request.query.data.longitude}`).then(result => {
     response.send(result.body.daily.data.map(dayObj => new DailyWeather(dayObj)));
   })
     .catch(console.error)
