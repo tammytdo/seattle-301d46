@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <h1>My Grocery List</h1>
+    <p><a href="/">Home</a></p>
+
+    <%= JSON.stringify(groceries) %>
+
+    <ul>
+      <li>celery: buy 5</li>
+      <% groceries.forEach(grocery => { %>
+        <li><%= grocery.name %>: buy <%= grocery.quantity %></li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
