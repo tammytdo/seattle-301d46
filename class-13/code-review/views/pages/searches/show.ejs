@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="styles/reset.css">
+<link rel="stylesheet" href="styles/modules.css">
+
+
+<head>
+
+</head>
+
+<body>
+    <h1>Results</h1>
+    <p><a href="/">Home</a></p>
+
+
+    <ul>
+        <% bookArray.forEach(showBook => { %>
+            <h2> Title:
+                <%= showBook.title %>
+            </h2>
+            <li> Author:
+                <%= showBook.authors %>
+            </li>
+            <li> Description:
+                <%= showBook.description %>
+            </li>
+            <li>  <img src="<%= showBook.photo %>" alt="">
+                
+            </li>
+            <li>
+              <form action="/save_to_library" method="POST">
+                <input type="hidden" name="title" value="<%= showBook.title %>">
+                <input type="hidden" name="authors" value="<%= showBook.authors %>">
+                <input type="hidden" name="description" value="<%= showBook.description %>">
+                <input type="hidden" name="photo" value="<%= showBook.photo %>">
+                <input type="text" name="bookshelf" value="insert bookshelf here">
+                <input type="submit">
+              </form>
+            </li>
+            <% }) %>
+    </ul>
+</body>
+
+</html>
