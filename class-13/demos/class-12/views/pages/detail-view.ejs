@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../layout/head.ejs') %>
+  </head>
+  <body>
+    <%- include('../layout/header.ejs') %>
+    <main>
+      <section class="task-view container">
+        <ul id="task-list">
+          <li class="task-item" data-id="<%= task.id %>">
+            <h4>Task: <%= task.title %></h4>
+            <p>Description: <%= task.description %></p>
+            <p>Contact person: <%= task.contact %></p>
+            <p>Completion status: <%= task.status %></p>
+            <p>Category: <%= task.category %></p>
+          </li>
+        </ul>
+      </section>
+      <form action="/update-task/<%=task.id %>" method="POST">
+        <fieldset>
+          <!-- you need this line on any PUT request -->
+          <input type="hidden" value="PUT" name="_method">
+
+          <label for="title">title
+            <input type="text" value="<%= task.title %>" name="title">
+          </label>
+          <label for="description">description
+            <input type="text" value="<%= task.description %>" name="description">
+          </label>
+          <label for="contact">contact
+            <input type="text" value="<%= task.contact %>" name="contact">
+          </label>
+          <label for="status">status
+            <input type="text" value="<%= task.status %>" name="status">
+          </label>
+          <label for="category">category
+            <input type="text" value="<%= task.category %>" name="category">
+          </label>
+          <input type="submit" value="update task">
+        </fieldset>
+      </form>
+    </main>
+  </body>
+</html>
