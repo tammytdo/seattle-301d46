@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+  color: navy;
+  background: #eee;
+}
+
+label, input {
+  display: block;
+  margin: 10px;
+}
+
+button {
+  color: white;
+  background: blue;
+  padding: 10px;
+}
+
+table {
+  border-collapse: collapse;
+  border: solid blue;
+}
+
+td, th {
+  border: solid darkgrey;
+}

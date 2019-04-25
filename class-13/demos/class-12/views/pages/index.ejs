@@ -1,0 +1,41 @@
+<%- include('../layout/head.ejs') %>
+<body>
+  <%- include('../layout/header.ejs') %>
+  <main>
+
+  <h1>My todo app</h1>
+  <table>
+    <tr>
+      <th>title</th>
+      <th>description</th>
+      <th>category</th>
+      <th>contact</th>
+      <th>status</th>
+    </tr>
+    <% for(let i = 0; i < data.length; i++){ %>
+    <tr>
+      <td><%= data[i].title %></td>
+      <td><%= data[i].description %></td>
+      <td><%= data[i].category %></td>
+      <td><%= data[i].contact %></td>
+      <td><%= data[i].status %></td>
+      <td><a href="/task/<%= data[i].id %>">task #<%=data[i].id %></a></td>
+    </tr>
+
+    <% }; %>
+  </table>
+
+  </main>
+
+  <!-- [
+  { title: 'teach day 12', description: 'stand and talk', category: 'education', contact: 'nicholas', status: 'incomplete'
+  },
+  {title: 'laundry', description: 'wash and fold', category: 'chores', contact: 'mom', status: 'incomplete'}
+  ] -->
+
+  <footer>
+
+  </footer>
+
+  </body>
+</html>
