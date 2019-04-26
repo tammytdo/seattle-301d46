@@ -1,0 +1,30 @@
+{
+  "name": "book_app",
+  "version": "1.0.0",
+  "description": "app for books",
+  "main": "server.js",
+  "dependencies": {
+    "dotenv": "^7.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "method-override": "^3.0.0",
+    "nodemon": "^1.18.11",
+    "pg": "^7.10.0",
+    "superagent": "^5.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evanpettie/Lab-11-ESJ.git"
+  },
+  "author": "Denevan Pettie, Kris Cerbulis, Williams Argenal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evanpettie/Lab-11-ESJ/issues"
+  },
+  "homepage": "https://github.com/evanpettie/Lab-11-ESJ#readme"
+}

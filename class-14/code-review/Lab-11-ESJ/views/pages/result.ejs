@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/icons.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/modules.css">
+  </head>
+  <body>
+    <form action="add-book" method="POST">
+      <input type="text" value="<%= book.title %>" name="title">
+      <input type="text" value="<%= book.description %>" name="description">
+      <input type="text" value="<%= book.image %>" name="image">
+      <input type="text" value="<%= book.author %>" name="author">
+      <input type="submit">
+    </form>
+      <div class="bookContainer">
+        <%= book.title %> <br>
+        <img src="<%= book.image %>"><br>
+        <%= book.author %><br>
+        <div class="bookDescription"><%= book.description %></div><br>
+      </div>
+
+  </body>
+</html>

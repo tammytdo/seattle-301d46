@@ -1,0 +1,47 @@
+body {
+  background-color: rgb(236, 236, 234);
+}
+
+header {
+  font-size: 66px;
+  margin: auto;
+  margin-top: 6%;
+  text-align: center;
+  font-family: 'Fredericka the Great', cursive;
+
+}
+
+.bookDescription{
+  width: 60%;
+  height: 20%;
+  margin-top: 5%;
+}
+
+.bookContainer{
+  width: 50%;
+  margin-left: 5%;
+}
+
+
+.top > h4{
+  margin: auto;
+  text-align: center;
+  font-size: 18px;
+  font-family: 'Staatliches', cursive;
+}
+
+.mid, button{
+  margin: auto;
+  margin-left: 45%;
+  margin-top: 10%;
+  font-family: 'Staatliches', cursive;
+}
+
+fieldset {
+  font-family: 'Staatliches', cursive;
+  float: left;
+}
+
+form {
+  font-family: 'Staatliches', cursive; 
+}
