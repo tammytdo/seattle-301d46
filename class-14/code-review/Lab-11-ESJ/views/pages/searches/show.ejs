@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1>This is the show page, the specific book data should appear here</h1>
+
+  <div class="bookContainer">
+        <%= book.title %> <br>
+        <form action="/delete-book/<%= book.id %>" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="hidden" name="id" value="<%= book.id %>">
+          <input type="submit" value="delete this book">
+        </form>
+        <img src="<%= book.image %>"><br>
+        <%= book.author %><br>
+        <div class="bookDescription"><%= book.description %></div><br>
+      <form action="">
+        <input type="submit">
+      </form>
+      </div>
+</body>
+</html>
