@@ -1,0 +1,38 @@
+<%- include('../layout/head.ejs') %>
+<body>
+  <header></header>
+   <main>
+
+    <!-- { title: 'teach day 12', description: 'stand and talk', category: 'education', contact: 'nicholas', status: 'incomplete' }, -->
+    
+    <form action="/add-task" method="POST">
+      <fieldset>
+        <label for="title">title
+          <input type="text" name="title">
+        </label>
+
+        <label for="description">description
+          <input type="text" name="description">
+        </label>
+
+        <label for="category">category
+          <input type="text" name="category">
+        </label>
+
+        <label for="contact">contact
+          <input type="text" name="contact">
+        </label>
+
+        <label for="status">
+          complete <input type="radio" name="status" value="complete">
+          incomplete <input type="radio" name="status" value="incomplete">
+        </label>
+
+        <input type="submit" value="add task">
+      </fieldset>
+    </form>
+
+   </main>
+   <footer></footer>
+</body>
+</html>
