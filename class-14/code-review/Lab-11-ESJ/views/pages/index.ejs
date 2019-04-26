@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Best Book App</title>
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/icons.css">
+  <link rel="stylesheet" href="styles/layout.css">
+  <link rel="stylesheet" href="styles/modules.css">
+  <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Staatliches" rel="stylesheet">
+</head>
+<body>
+
+<div class="top">
+  <header>The Biblio Filer</header>
+  <h4>We've got you covered like a dust jacket</h4>
+</div>
+
+  <main>
+
+    <form action="/searches" method="post">
+
+
+      <div class="mid">
+
+      <div class="input">
+        <input type="text" name="search" placeholder="Enter a title or author" required>
+      </div>
+
+
+        <fieldset>
+          <label for="title">
+            <span>Title</span>
+            <input type="radio" name="search" value="title" required>
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <label for="author">
+            <span>Author</span>
+            <input type="radio" name="search" value="author" required>
+          </label>
+        </fieldset>
+      </div>
+
+        <button type="submit">Search the Google Books API</button>
+
+
+
+
+    </form>
+
+      <h1 class="savedBookHeader">These are your saved books</h1>
+      <% book = book.reverse() %>
+      <% for (let i in book){ %>
+        <div class="savedBooks">
+
+      <ul>
+        <li><%= book[i].title %></li>
+        <li><img src="<%= book[i].image %>"></li>
+        <li><%= book[i].author %></li>
+        <li><%= book[i].description %></li>
+        <a href="/specificBook/<%= book[i].id %>">information</a>
+      </ul>
+      </div>
+      <% }; %>
+
+
+
+<!-- Testing from Code Review -->
+
+
+
+
+
+
+  </main>
+
+
+
+</body>
+</html>
